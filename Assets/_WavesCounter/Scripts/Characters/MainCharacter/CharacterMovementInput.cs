@@ -1,7 +1,7 @@
+using _WavesCounter.Scripts.Utilities;
 using UnityEngine;
-using Utilities;
 
-namespace Characters.MainCharacter
+namespace _WavesCounter.Scripts.Characters.MainCharacter
 {
     public class CharacterMovementInput : MonoBehaviour
     {

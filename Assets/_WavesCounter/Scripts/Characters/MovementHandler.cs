@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Characters
+namespace _WavesCounter.Scripts.Characters
 {
     public class MovementHandler
     {
