@@ -1,9 +1,9 @@
 using _WavesCounter.Scripts.Utilities;
 using UnityEngine;
 
-namespace _WavesCounter.Scripts.Characters.MainCharacter
+namespace _WavesCounter.Scripts.Characters.Player
 {
-    public class CharacterMovementInput : MonoBehaviour
+    public class PlayerCharacterMovementInput : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _moveSpeed;
