@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1965033031
+--- !u!1001 &657543254
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -178,5 +178,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSceneMainItems
       objectReference: {fileID: 0}
+    - target: {fileID: 1543186095474868956, guid: 515fcd8e7bbb31147a287e4cb9eb5608, type: 3}
+      propertyPath: _arenaStagePrefab
+      value: 
+      objectReference: {fileID: 4596778543630719716, guid: f3b45b9c827c38e4e94d3d07c398c127, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 515fcd8e7bbb31147a287e4cb9eb5608, type: 3}
