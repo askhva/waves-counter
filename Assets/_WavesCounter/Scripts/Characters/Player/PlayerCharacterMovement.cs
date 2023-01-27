@@ -29,7 +29,7 @@ namespace _WavesCounter.Scripts.Characters.Player
                 _characterController.Move(direction * _movementSpeed * Time.deltaTime);
                 Rotate(direction);
                 
-                _moveLimiter.TryRestrictMovement(transform);
+                _moveLimiter.RestrictMovement(transform);
             }
         }
         

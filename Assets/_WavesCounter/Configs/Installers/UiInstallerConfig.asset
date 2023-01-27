@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eafab4820fd46d9419e6a03bb46a36a0, type: 3}
+  m_Name: UiInstallerConfig
+  m_EditorClassIdentifier: 
+  _uiWindowsRootPrefab: {fileID: 8856163204114005424, guid: 221f4a34bddc4cd4f890f6d555f93ccd, type: 3}
+  _uiCutscenesRootPrefab: {fileID: -1720155877216230046, guid: 3289f49960b7d954aaba5e836df3f4ca, type: 3}

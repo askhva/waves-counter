@@ -11,12 +11,8 @@ namespace _WavesCounter.Scripts.Utilities
             _camera = Camera.main;
         }
         
-        public void TryRestrictMovement(Transform restrictedTransform)
+        public void RestrictMovement(Transform restrictedTransform)
         {
-            // Use this for "Perspective" camera projection.
-            // Vector3 cameraToObject = restrictedTransform.position - _camera.transform.position;
-            // float distance = -Vector3.Project(cameraToObject, _camera.transform.forward).y;
-            
             Vector3 cameraPosition = _camera.transform.position;
             float cameraDistance = Mathf.Sqrt(Mathf.Pow(cameraPosition.y, 2) + Mathf.Pow(cameraPosition.z, 2));
             

@@ -1,9 +1,11 @@
+using _WavesCounter.Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace _WavesCounter.Scripts.Ui.MainMenu
+namespace _WavesCounter.Scripts.Ui
 {
-    public class MainGameMenu : MonoBehaviour
+    public class GameMainMenu : MonoBehaviour
     {
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _newGameButton;
@@ -28,22 +30,22 @@ namespace _WavesCounter.Scripts.Ui.MainMenu
 
         private void OnContinueButtonClick()
         {
-            
+            Debug.LogError("CONTINUE_GAME_NOT_IMPLEMENTED_YET");
         }
         
         private void OnNewGameButtonClick()
         {
-            
+            SceneManager.LoadScene((int) LoadableScenes.GreenStage);
         }
 
         private void OnSettingsButtonClick()
         {
-            
+            Debug.LogError("SETTINGS_NOT_IMPLEMENTED_YET");
         }
         
         private void OnExitButtonClick()
         {
-            
+            Application.Quit();
         }
     }
 }
