@@ -1,8 +1,8 @@
 using _WavesCounter.Scripts.Utilities;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _WavesCounter.Scripts.Ui.PauseMenu
 {
@@ -15,6 +15,14 @@ namespace _WavesCounter.Scripts.Ui.PauseMenu
         [SerializeField] private Transform _pauseMenuViewTransform;
         [SerializeField] private Image _backgroundImage;
 
+        private ScenesLoader _scenesLoader;
+        
+        [Inject]
+        private void Construct(ScenesLoader scenesLoader)
+        {
+            _scenesLoader = scenesLoader;
+        }
+        
         private void Start()
         {
             _pauseMenuButton.onClick.AddListener(OnPauseMenuButtonClick);
@@ -52,7 +60,8 @@ namespace _WavesCounter.Scripts.Ui.PauseMenu
         
         private void OnExitMenuButtonClick()
         {
-            SceneManager.LoadScene((int) LoadableScenes.MainMenu);
+            Time.timeScale = 1;
+            _scenesLoader.Load(LoadableScenes.MainMenu);
         }
     }
 }

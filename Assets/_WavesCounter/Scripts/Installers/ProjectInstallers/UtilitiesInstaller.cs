@@ -1,5 +1,6 @@
 using _WavesCounter.Scripts.Configs.Installers;
 using _WavesCounter.Scripts.Utilities;
+using UnityEngine;
 using Zenject;
 
 namespace _WavesCounter.Scripts.Installers.ProjectInstallers
@@ -15,8 +16,9 @@ namespace _WavesCounter.Scripts.Installers.ProjectInstallers
         
         public override void InstallBindings()
         {
-            Container.InstantiatePrefab(_utilitiesInstallerConfig.CameraPrefab);
+            Container.Bind<Camera>().FromComponentInNewPrefab(_utilitiesInstallerConfig.CameraPrefab).AsSingle();
             Container.Bind<CameraOutBoundsMoveLimiter>().AsSingle();
+            Container.Bind<ScenesLoader>().AsSingle();
         }
     }
 }

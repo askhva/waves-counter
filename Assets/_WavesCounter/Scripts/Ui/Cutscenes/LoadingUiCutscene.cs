@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace _WavesCounter.Scripts.Ui.Cutscenes
 {
-    public class FakeLoadingUiCutscene : UiCutscene
+    public class LoadingUiCutscene : UiCutscene
     {
         [SerializeField] private Image _loadingProgressBarImage;
         [SerializeField] private int _minStepsValue;
@@ -14,7 +14,12 @@ namespace _WavesCounter.Scripts.Ui.Cutscenes
         [SerializeField] private float _minTimePerStepValue;
         [SerializeField] private float _maxTimePerStepValue;
 
-        public Tween Show()
+        public Tween Show(AsyncOperation asyncOperation = null)
+        {
+            return asyncOperation == null ? GetFakeLoading() : GetLoading(asyncOperation);
+        }
+
+        private Tween GetFakeLoading()
         {
             int stepsCount = Random.Range(_minStepsValue, _maxStepsValue);
             float valuePerStep = 1.0f / stepsCount;
@@ -33,6 +38,27 @@ namespace _WavesCounter.Scripts.Ui.Cutscenes
             }
 
             loadingSequence.AppendCallback(() => gameObject.SetActive(false));
+
+            return loadingSequence;
+        }
+
+        private Tween GetLoading(AsyncOperation asyncOperation)
+        {
+            Sequence loadingSequence = DOTween.Sequence();
+            asyncOperation.allowSceneActivation = false;
+
+            loadingSequence
+                .AppendCallback(() =>
+                {
+                    _loadingProgressBarImage.fillAmount = asyncOperation.progress;
+                    
+                    if (asyncOperation.progress >= 0.9f)
+                    {
+                        asyncOperation.allowSceneActivation = true;
+                        loadingSequence.Kill();
+                    }
+                })
+                .SetLoops(-1);
 
             return loadingSequence;
         }

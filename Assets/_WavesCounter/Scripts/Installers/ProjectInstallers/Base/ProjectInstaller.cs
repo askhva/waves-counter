@@ -7,7 +7,6 @@ namespace _WavesCounter.Scripts.Installers.ProjectInstallers.Base
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private Canvas _overlayCanvas;
-        
         [SerializeField] private CharactersInstallerConfig _charactersInstallerConfig;
         [SerializeField] private UiInstallerConfig _uiInstallerConfig;
         [SerializeField] private UtilitiesInstallerConfig _utilitiesInstallerConfig;

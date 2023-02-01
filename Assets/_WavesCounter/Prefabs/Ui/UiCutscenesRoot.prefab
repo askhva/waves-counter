@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735231774814829869, guid: 4d1cdb890b302e9459011c2aa0d3cf31, type: 3}
       propertyPath: m_Name
-      value: FakeLoadingCutscene
+      value: LoadingCutscene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1cdb890b302e9459011c2aa0d3cf31, type: 3}

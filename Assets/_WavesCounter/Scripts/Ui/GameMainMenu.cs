@@ -1,7 +1,7 @@
 using _WavesCounter.Scripts.Utilities;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _WavesCounter.Scripts.Ui
 {
@@ -12,6 +12,14 @@ namespace _WavesCounter.Scripts.Ui
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _exitButton;
 
+        private ScenesLoader _scenesLoader;
+        
+        [Inject]
+        private void Construct(ScenesLoader scenesLoader)
+        {
+            _scenesLoader = scenesLoader;
+        }
+        
         private void Start()
         {
             _continueButton.onClick.AddListener(OnContinueButtonClick);
@@ -35,7 +43,7 @@ namespace _WavesCounter.Scripts.Ui
         
         private void OnNewGameButtonClick()
         {
-            SceneManager.LoadScene((int) LoadableScenes.GreenStage);
+            _scenesLoader.Load(LoadableScenes.GreenStage);
         }
 
         private void OnSettingsButtonClick()

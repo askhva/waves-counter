@@ -6,9 +6,9 @@ namespace _WavesCounter.Scripts.Utilities
     {
         private Camera _camera;
 
-        public CameraOutBoundsMoveLimiter()
+        public CameraOutBoundsMoveLimiter(Camera camera)
         {
-            _camera = Camera.main;
+            _camera = camera;
         }
         
         public void RestrictMovement(Transform restrictedTransform)
