@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5094fbf4fed9d7244849bb1ac5815004, type: 3}
-  m_Name: UtilitiesInstallerConfig
+  m_Name: UtilitiesProjectInstallerConfig
   m_EditorClassIdentifier: 
   _cameraPrefab: {fileID: 1699915637548318890, guid: ec920dd1a4158174da965a8f25236281, type: 3}

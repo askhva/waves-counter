@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6da6c6a16673b43974f291d1bc555b, type: 3}
-  m_Name: CharactersInstallerConfig
+  m_Name: CharactersProjectInstallerConfig
   m_EditorClassIdentifier: 
   _playerCharacterPrefab: {fileID: 2038478365064545604, guid: c174aca96dce8054a8b86d8fd4bcf310, type: 3}

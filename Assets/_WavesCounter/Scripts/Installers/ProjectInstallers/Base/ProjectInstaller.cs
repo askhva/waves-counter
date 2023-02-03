@@ -1,4 +1,4 @@
-using _WavesCounter.Scripts.Configs.Installers;
+using _WavesCounter.Scripts.Configs.ProjectInstallers;
 using UnityEngine;
 using Zenject;
 
@@ -7,15 +7,15 @@ namespace _WavesCounter.Scripts.Installers.ProjectInstallers.Base
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private Canvas _overlayCanvas;
-        [SerializeField] private CharactersInstallerConfig _charactersInstallerConfig;
-        [SerializeField] private UiInstallerConfig _uiInstallerConfig;
-        [SerializeField] private UtilitiesInstallerConfig _utilitiesInstallerConfig;
+        [SerializeField] private CharactersProjectInstallerConfig _charactersProjectInstallerConfig;
+        [SerializeField] private UiProjectInstallerConfig _uiProjectInstallerConfig;
+        [SerializeField] private UtilitiesProjectInstallerConfig _utilitiesProjectInstallerConfig;
         
         public override void InstallBindings()
         {
-            CharactersInstaller.Install(Container, _charactersInstallerConfig);
-            UiInstaller.Install(Container, _overlayCanvas, _uiInstallerConfig);
-            UtilitiesInstaller.Install(Container, _utilitiesInstallerConfig);
+            CharactersInstaller.Install(Container, _charactersProjectInstallerConfig);
+            UiInstaller.Install(Container, _overlayCanvas, _uiProjectInstallerConfig);
+            UtilitiesInstaller.Install(Container, _utilitiesProjectInstallerConfig);
         }
     }
 }

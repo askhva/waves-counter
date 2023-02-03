@@ -3,7 +3,7 @@ using Zenject;
 
 namespace _WavesCounter.Scripts.Installers
 {
-    public class StartupInstaller : MonoInstaller
+    public class StartupSceneInstaller : MonoInstaller
     {
         private ScenesLoader _scenesLoader;
         

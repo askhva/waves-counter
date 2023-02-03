@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/_WavesCounter/Scenes/MainMenuScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/_WavesCounter/Scenes/GreenStageScene.unity
+    path: Assets/_WavesCounter/Scenes/Stages/GreenStageScene.unity
     guid: 90c8ce2994b34a445b708e97d28caaa3
   m_configObjects: {}

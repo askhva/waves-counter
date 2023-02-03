@@ -1,22 +1,22 @@
-using _WavesCounter.Scripts.Configs.Installers;
+using _WavesCounter.Scripts.Configs.ProjectInstallers;
 using _WavesCounter.Scripts.Utilities;
 using UnityEngine;
 using Zenject;
 
 namespace _WavesCounter.Scripts.Installers.ProjectInstallers
 {
-    public class UtilitiesInstaller : Installer<UtilitiesInstallerConfig, UtilitiesInstaller>
+    public class UtilitiesInstaller : Installer<UtilitiesProjectInstallerConfig, UtilitiesInstaller>
     {
-        private UtilitiesInstallerConfig _utilitiesInstallerConfig;
+        private UtilitiesProjectInstallerConfig _utilitiesProjectInstallerConfig;
         
-        public UtilitiesInstaller(UtilitiesInstallerConfig utilitiesInstallerConfig)
+        public UtilitiesInstaller(UtilitiesProjectInstallerConfig utilitiesProjectInstallerConfig)
         {
-            _utilitiesInstallerConfig = utilitiesInstallerConfig;
+            _utilitiesProjectInstallerConfig = utilitiesProjectInstallerConfig;
         }
         
         public override void InstallBindings()
         {
-            Container.Bind<Camera>().FromComponentInNewPrefab(_utilitiesInstallerConfig.CameraPrefab).AsSingle();
+            Container.Bind<Camera>().FromComponentInNewPrefab(_utilitiesProjectInstallerConfig.CameraPrefab).AsSingle();
             Container.Bind<CameraOutBoundsMoveLimiter>().AsSingle();
             Container.Bind<ScenesLoader>().AsSingle();
         }

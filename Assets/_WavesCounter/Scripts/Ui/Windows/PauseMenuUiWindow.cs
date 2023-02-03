@@ -1,12 +1,13 @@
+using _WavesCounter.Scripts.Ui.Windows.Base;
 using _WavesCounter.Scripts.Utilities;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace _WavesCounter.Scripts.Ui.PauseMenu
+namespace _WavesCounter.Scripts.Ui.Windows
 {
-    public class PauseMenu : MonoBehaviour
+    public class PauseMenuUiWindow : UiWindow
     {
         [SerializeField] private Button _pauseMenuButton;
         [SerializeField] private Button _continueButton;

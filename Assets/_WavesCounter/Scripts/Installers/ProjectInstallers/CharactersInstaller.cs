@@ -1,21 +1,21 @@
 using _WavesCounter.Scripts.Characters.Player;
-using _WavesCounter.Scripts.Configs.Installers;
+using _WavesCounter.Scripts.Configs.ProjectInstallers;
 using Zenject;
 
 namespace _WavesCounter.Scripts.Installers.ProjectInstallers
 {
-    public class CharactersInstaller : Installer<CharactersInstallerConfig, CharactersInstaller>
+    public class CharactersInstaller : Installer<CharactersProjectInstallerConfig, CharactersInstaller>
     {
-        private CharactersInstallerConfig _charactersInstallerConfig;
+        private CharactersProjectInstallerConfig _charactersProjectInstallerConfig;
 
-        public CharactersInstaller(CharactersInstallerConfig charactersInstallerConfig)
+        public CharactersInstaller(CharactersProjectInstallerConfig charactersProjectInstallerConfig)
         {
-            _charactersInstallerConfig = charactersInstallerConfig;
+            _charactersProjectInstallerConfig = charactersProjectInstallerConfig;
         }
         
         public override void InstallBindings()
         {
-            Container.Bind<PlayerCharacter>().FromComponentInNewPrefab(_charactersInstallerConfig.PlayerCharacterPrefab)
+            Container.Bind<PlayerCharacter>().FromComponentInNewPrefab(_charactersProjectInstallerConfig.PlayerCharacterPrefab)
                 .AsSingle().NonLazy();
         }
     }

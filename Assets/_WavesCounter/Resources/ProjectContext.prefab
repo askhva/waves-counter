@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _overlayCanvas: {fileID: 4450096249246700931}
-  _charactersInstallerConfig: {fileID: 11400000, guid: d211f0f21fe1b5546b3960bca3a3c34a, type: 2}
-  _uiInstallerConfig: {fileID: 11400000, guid: 2dc129ddf955ffb49be54db532e8a51e, type: 2}
-  _utilitiesInstallerConfig: {fileID: 11400000, guid: f8708822cad2d7c4d9e6243f1dd9950a, type: 2}
+  _charactersProjectInstallerConfig: {fileID: 11400000, guid: d211f0f21fe1b5546b3960bca3a3c34a, type: 2}
+  _uiProjectInstallerConfig: {fileID: 11400000, guid: 2dc129ddf955ffb49be54db532e8a51e, type: 2}
+  _utilitiesProjectInstallerConfig: {fileID: 11400000, guid: f8708822cad2d7c4d9e6243f1dd9950a, type: 2}
 --- !u!1 &5631543332839979381
 GameObject:
   m_ObjectHideFlags: 0
