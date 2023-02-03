@@ -9,5 +9,11 @@ namespace _WavesCounter.Scripts.Characters.Player
             gameObject.SetActive(true);
             transform.position = startPosition;
         }
+
+        public void Disable()
+        {
+            transform.rotation = Quaternion.identity;
+            gameObject.SetActive(false);
+        }
     }
 }

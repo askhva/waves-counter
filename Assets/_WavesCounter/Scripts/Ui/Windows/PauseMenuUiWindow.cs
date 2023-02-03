@@ -9,11 +9,9 @@ namespace _WavesCounter.Scripts.Ui.Windows
 {
     public class PauseMenuUiWindow : UiWindow
     {
-        [SerializeField] private Button _pauseMenuButton;
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _exitMainMenuButton;
-        [SerializeField] private Transform _pauseMenuViewTransform;
         [SerializeField] private Image _backgroundImage;
 
         private ScenesLoader _scenesLoader;
@@ -26,7 +24,6 @@ namespace _WavesCounter.Scripts.Ui.Windows
         
         private void Start()
         {
-            _pauseMenuButton.onClick.AddListener(OnPauseMenuButtonClick);
             _continueButton.onClick.AddListener(OnContinueButtonClick);
             _settingsButton.onClick.AddListener(OnSettingsButtonClick);
             _exitMainMenuButton.onClick.AddListener(OnExitMenuButtonClick);
@@ -34,24 +31,27 @@ namespace _WavesCounter.Scripts.Ui.Windows
 
         private void OnDestroy()
         {
-            _pauseMenuButton.onClick.RemoveListener(OnPauseMenuButtonClick);
             _continueButton.onClick.RemoveListener(OnContinueButtonClick);
             _settingsButton.onClick.RemoveListener(OnSettingsButtonClick);
             _exitMainMenuButton.onClick.RemoveListener(OnExitMenuButtonClick);
         }
-
-        private void OnPauseMenuButtonClick()
-        {
-            _pauseMenuViewTransform.gameObject.SetActive(true);
-            _backgroundImage.DOFade(0.75f, 0.25f).SetUpdate(UpdateType.Normal, true);
-            Time.timeScale = 0;
-        }
         
+        public override void Show()
+        {
+            gameObject.SetActive(true);
+            _backgroundImage.DOFade(0.75f, 0.25f).SetUpdate(UpdateType.Normal, true);
+        }
+
+        public override void Hide()
+        {
+            _backgroundImage.DOFade(0.0f, 0.0f);
+            gameObject.SetActive(false);
+        }
+
         private void OnContinueButtonClick()
         {
-            _pauseMenuViewTransform.gameObject.SetActive(false);
-            _backgroundImage.DOFade(0.0f, 0.0f);
             Time.timeScale = 1;
+            Hide();
         }
         
         private void OnSettingsButtonClick()
@@ -62,6 +62,7 @@ namespace _WavesCounter.Scripts.Ui.Windows
         private void OnExitMenuButtonClick()
         {
             Time.timeScale = 1;
+            Hide();
             _scenesLoader.Load(LoadableScenes.MainMenu);
         }
     }
